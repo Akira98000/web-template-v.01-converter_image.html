@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border:none;
+    text-transform: capitalize;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+body{
+    background:#000000;
+    
+}
+section{
+    min-height: 100vh;
+    padding:0 9%;
+    padding-top: 7.5rem;
+    padding-bottom: 2rem;
+}
+.bouton{
+    display: inline-block;
+    margin-top: 1rem;
+    padding:.8rem 3rem;
+    border-radius: 5rem;
+    background:#fff;
+    font-size: 1.7rem;
+    color:rgb(0, 0, 0);
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: all .3s linear;
+}
+.bouton:hover{
+    transform: scale(1.1);
+    background: orange;
+    color:white;
+}
+
+
+input[type="submit"] {
+    display: none;
+}
+.filtre_titre{
+    text-align: center;
+    background:#fff;
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    padding:1rem;
+}
+header{
+    position: fixed;
+    top:0; left:0;
+    width:100%;
+    background:rgb(0, 0, 0);
+    box-shadow: 0 .5rem 1rem rgba(255, 255, 255, 0.1);
+    padding:2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+header .titre{
+    font-size: 2rem;
+    color:white;
+}
+header .navbar a{
+    font-size: 1.7rem;
+    margin-left: 2rem;
+    color:white;
+}
+header .navbar a:hover{
+    color:orange;
+}
+header input{
+    display: none;
+}
+header label{
+    font-size: 3rem;
+    color:white;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+.acceuil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+}
+
+.acceuil .image img{
+    width:40vw;
+    
+}
+.contenu_txt{
+    width : 500px;
+    height: 300px;
+    margin:200px auto;
+}
+.acceuil .contenu_txt h3{
+    font-size: 5.5rem;
+    color:rgb(255, 255, 255);
+    text-transform: uppercase;
+}
+.acceuil .contenu_txt h3 span{
+    color:orange;
+    text-transform: uppercase;
+}
+.acceuil .contenu_txt p{
+    font-size: 1.7rem;
+    color:rgb(255, 255, 255);
+    padding:1rem 0;
+}
+.filtre .filtre_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.filtre .filtre_box .card{
+    flex:1 1 30rem;
+    background:rgb(0, 0, 0);
+    border-radius: 50px;
+    border:.1rem solid rgb(78, 78, 78);
+    box-shadow: 0 .5rem 1rem rgba(255, 255, 255, 0.1);
+    margin:1.5rem;
+    padding:3rem 2rem;
+    text-align: center;
+    transition: .2s linear;
+}
+.filtre .filtre_box .card img{
+    height: 15rem;
+    border-radius: 15px;
+}
+.filtre .filtre_box .card h3{
+    font-size: 2rem;
+    color:rgb(255, 255, 255);
+    padding-top: 1rem;
+}
+.filtre .filtre_box .card p{
+    font-size: 1.3rem;
+    color:rgb(242, 242, 242);
+    padding: 1rem 0;
+}
+@media (max-width:1200px){ 
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width:991px){
+    section{
+        padding:0 3%;
+        padding-top: 7.5rem;
+        padding-bottom: 2rem;
+    }
+}
+@media (max-width:768px){
+    header label{
+        visibility: visible;
+        opacity: 1;
+    }
+    header .navbar{
+        position: absolute;
+        top:100%; left: 0;
+        width:100%;
+        background:rgb(0, 0, 0);
+        padding:1rem 2rem;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0 .5rem 1rem rgba(255, 255, 255, 0.1);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+        transition: .2s linear;
+    }
+    header .navbar a{
+        display: block;
+        margin:2rem 0;
+        font-size: 2rem;
+    }
+    header input:checked ~ .navbar{
+        transform: scaleY(1);
+        opacity: 1;
+    }
+    header input:checked ~ label::before{
+        content:'\f00d';
+    }
+    .acceuil{
+        flex-flow: column-reverse;
+    }
+    .acceuil .image img{
+        width:100%;
+     
+    }
+    .acceuil .contenu_txt h3{
+        font-size: 3.6rem;
+    }
+    .acceuil .contenu_txt p{
+        
+        font-size: 1.5rem;
+    }
+}
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}
+#file-upload-button{
+    display: none;
+}
+button{
+    display: none;
+}

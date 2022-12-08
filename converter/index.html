@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr"> 
+    <!--
+        *** BASES VERIFICATION HTML ***
+            * Utilisation du Language HTML5 et XML
+            * Non Utlisation du JS (javascript) && Ni d'import JS
+            * Code HTML5 commentée
+            * Code Conforme au norme W3C Validation : CODE VALIDE 
+     -->
+<head>
+    <!-- 
+        *** Les Métadonnées ***
+
+            * Utilisation de UTF-8 : 
+            * Lien de mon fichier CSS (Feuille de style cascades)
+            * Import des icones avec FONTAWESOME (Site spécialisé sur les icones 2D)
+        
+        *** Les Métadonnées ***
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvertBMP</title>
+    
+    <!-- Import depuis le site officiel FontAwesome : Ancienne Version : 5.15.3 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- Import depuis le site CDNJS : Nouvelle Version : 6.2.1  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+
+    <!--    
+        * titre
+        * #hamburger
+        * barre_nav
+        * #acceuil
+        * filtre
+        * acceuil
+        * contenu_txt
+        * bouton
+        * image
+        * filtre
+        * filtre_titre
+        * filtre_box
+        * card
+    -->
+
+
+    <link rel="stylesheet" href="./contenu/css/style.css">
+</head>
+<body>
+    <!-- 
+        *** STUCTURE DU TEMPLATE HTML ***
+
+            *********************** 
+            *      <header>       *
+            *      <nav>          *
+            *      <main>         *
+            *      <section>      *
+            *      <div>          *
+            ***********************
+    -->
+<header>
+     <!-- 
+        Le Header de ce site va contenir:
+            * Un nav qui contient:
+                **  UN LOGO : TITRE 
+                *** BOUTON NAVIGATION : ACCEUIL -> Son Href est #acceuil
+                *** BOUTON NAVIGATION : FILTRE  -> Son Href est #filtre
+                *** BOUTON NAVIGATION : INFORMATION -> Son Href est #information
+                **
+            *
+    -->
+    <a href="#" class="titre">CONVERTISSIMOR.BMP</a>
+    <!-- 
+        
+        Mécanisme du Hamburger : 
+            * Premièrement Nous Faisons un input Checkbox
+            * Deuxièment on crée un label qui va contenir mon icons "Fas Fa-bars" (importer depuis fontawesome)
+            * on relie les deux a l'aide d'un identifiant
+
+        Le but c'est que lorsqu'on coche sur le checkbox, elle puisse ouvrir le nav lorsque elle est en version mobile
+        (Responsive). Biensur cette checkbox ne sera pas visible sur le site internet car nous avions fait un display:none
+        Cela signifies qu'il est cachée en versions desktop et en responsive mobile.
+    
+    -->
+    <input type="checkbox" id="hamburger"> 
+    <label for="hamburger" class="fas fa-bars"></label>
+
+    <nav class="navbar">
+        <!-- 
+            *** IDENTIFIANT ***
+                * Comme vous pourriez voir,nous utilisont des "#" ce qui fait réference au identifiant
+                On utilise cela pour que l'utlisateur puisse facilement se déplacer dans l'interface web
+                * Ce système fonctionne :
+                    * Premièrement il faut crée un identifiant sur une section : Ici pour l'exemple on prends id=FILTRE
+                    * Le Dièse fera référence a cette identifiant, ce qui permettra lorsqu'on clique d'accédér a la page
+                    * On mets une animations avec une transition pour que l'expérience utilisateur soit propre !
+
+        -->
+        <a href="#acceuil">Acceuil</a>
+        <a href="#filtre">Filtre</a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href=""><i class="fa-solid fa-circle-info"></i></a>
+    </nav>
+</header>
+
+<!-- 
+    Le but de notre groupe est de ne pas regrouper toutes les informations en 1 seules form
+        * Déjà pour l'ergonomie du Site : On évite plusieurs informations en une card
+        * Pour l'expérience utilisateur : pour éviter la confusion aux "USERS"
+
+    Pour cela notre idée est de :
+        * séparer le bouton "Choisir son images" et sa prévisualisation sur le site
+        * séparer les différents type de filtres
+
+    La pluparts des sites de convertions on souvents cette points communs :
+         * de séparer l'url du video ou photo à convertir
+        * séparer les différents options
+ -->
+<form action="index.py" method="post">
+<section class="acceuil" id="acceuil">
+
+    <div class="contenu_txt">
+        <!-- 
+            Cette section sera consacrée sur l'entrée du template :
+                * Notre but est de faire une bonne impressions lorsqu'on regarde la première fois le template
+                un esprit de confiance doit naitre entre utilisateur et le template
+
+                * Pour faire cela :
+                    * Un Titre (Marque de l'entreprise : ICI Convertissimor) en balise <h1>
+                    * Un petit text qui permet d'introduire à l'utilisateur l'intêret de ce site. Ici c'est un site de convertion de type BMP
+                    * Une images qui fait référence au thèmes du site 
+                *
+        -->
+        <h3>CONVERTISSIMOR</h3>
+        <p>Convertir une image en BMP en appliquant plusieurs variété de Site.Il suffit d'uploader un fichier à convertir et d'ajouter des effets numériques. La taille maximum du fichier chargé ne peut dépasser 20 Mo actuellement.</p>
+        <label for="file-upload" class="bouton" type="file" name="fichier1">
+            <i class="fa fa-cloud-upload"></i> FICHIER CHOSIS : <input type="file" name="fichier1" id="file-upload"/></label>
+    </div>
+    <div class="image">
+        <img src="./contenu/image/img.png" alt="">
+    </div>
+</section>
+
+<section class="filtre" id="filtre">
+    <!-- 
+        * L'autre partie :
+            *** Une section du choix d'options:
+                * Le but ici c'est que l'utlisateur c'est ce qu'il va convertir
+                    * pour cela nous allons mettre le titre : Pour que l'utilisateur sera ce qu'il va convertir
+                    * une image, pour savoir comment sera son images après avoir été convertie par le programme C
+                    * un petit texte du fonctionnement du mécanisme
+
+                * Technique HTML
+                    * Une section qui englobe :
+                        * Un Titre Globale dont sa classe est :Title
+                        * plusieurs boite appellé : BOX
+                            ** A l'intérieur de cette Boite
+                                * Il y aura une image : <img>
+                                * Un titre local : <h3>
+                                * Un text : <p>
+                                * Un bouton : <a class="btn">
+                            **
+                        *
+                    *
+                *
+    -->
+    <h1 class="filtre_titre">Nos filtres disponibles</h1>
+    <div class="filtre_box">
+        <div class="card">
+            <!-- BOX 1 : MONOCHROME 
+                * NOM IMAGE :
+                * NOM DU TITRE : 
+            -->
+            <img src="contenu/image/result test3 en monochrome.bmp" alt="">
+            <h3>Monochrome</h3>
+            <p>Le terme monochrome signifie « qui est d'une seule couleur », du grec : mono qui signifie « seul », et chroma, la couleur. Dans les arts plastiques monochromie s'oppose à polychromie : « œuvre de plusieurs couleurs ».</p>
+            <label class="bouton">
+                <input type="checkbox" name="monochrome" value="ok" /> Monochrome</label>
+        </div>
+        <div class="card">
+            <!-- BOX 2 : MONOCHROME 
+                * NOM IMAGE :
+                * NOM DU TITRE : 
+            -->
+            <img src="contenu/image/result test2 en couleurs inversees.bmp" alt="">
+            <h3>Couleurs Inversées</h3>
+            <p>Le terme monochrome signifie « qui est d'une seule couleur », du grec : mono qui signifie « seul », et chroma, la couleur. Dans les arts plastiques monochromie s'oppose à polychromie : « œuvre de plusieurs couleurs ».</p>
+            <label class="bouton">
+                <input type="checkbox" name="inversion" value="ok" />  Inversion des Couleurs</label>
+        </div>
+        <div class="card">
+            <!-- BOX 3 : MONOCHROME 
+                * NOM IMAGE :
+                * NOM DU TITRE : 
+            -->
+            <img src="contenu/image/result test4 en niveaux de gris.bmp" alt="">
+            <h3>Niveau de Gris</h3>
+            <p>Le terme monochrome signifie « qui est d'une seule couleur », du grec : mono qui signifie « seul », et chroma, la couleur. Dans les arts plastiques monochromie s'oppose à polychromie : « œuvre de plusieurs couleurs ».</p>
+            <label class="bouton">
+                <input type="checkbox" name="gris" value="ok" />  Niveaux de gris</label>
+        </div>
+        <div class="card">
+            <!-- BOX 4: MONOCHROME 
+                * NOM IMAGE :
+                * NOM DU TITRE : 
+            -->
+            <img src="contenu/image/result test1 en contours.bmp" alt="">
+            <h3>Contours</h3>
+            <p>Le terme monochrome signifie « qui est d'une seule couleur », du grec : mono qui signifie « seul », et chroma, la couleur. Dans les arts plastiques monochromie s'oppose à polychromie : « œuvre de plusieurs couleurs ».</p>
+            <label class="bouton">
+                <input type="checkbox" name="gris" value="ok" /> Non disponibles</label>
+        </div>
+        <div class="card">
+            <!-- BOX 5 : MONOCHROME 
+                * NOM IMAGE :
+                * NOM DU TITRE : 
+            -->
+            <img src="contenu/image/result test1 et test2 superposes.bmp" alt="">
+            <h3>Superposée Deux images</h3>
+            <p>Le terme monochrome signifie « qui est d'une seule couleur », du grec : mono qui signifie « seul », et chroma, la couleur. Dans les arts plastiques monochromie s'oppose à polychromie : « œuvre de plusieurs couleurs ».</p>
+            <label class="bouton">
+                <input type="checkbox" name="gris" value="ok" /> Non disponibles</label>
+        </div>
+        <div class="card">
+            <!-- BOX 6 : MONOCHROME 
+                * NOM IMAGE :
+                * NOM DU TITRE : 
+            -->
+            <img src="https://static.wixstatic.com/media/5a86d7_b4479ccad49f4270b78a23be43b162b8~mv2.gif" alt="">
+            <h3>FILTRER L'IMAGE</h3>
+            <p>Le terme monochrome signifie « qui est d'une seule couleur », du grec : mono qui signifie « seul », et chroma, la couleur. Dans les arts plastiques monochromie s'oppose à polychromie : « œuvre de plusieurs couleurs ».</p>
+            <label for="send-file" class="bouton">
+               Convertir L'images <input type="submit" value="Traiter l'image" id="send-file"/></label>
+        </div>
+    </div>
+</section>
+</body>
+</html>
